@@ -20,7 +20,7 @@ public class XPathDemo {
 	public static void main(String[] args) {
 		DocumentBuilderFactory domFactory = DocumentBuilderFactory
 				.newInstance();
-		domFactory.setNamespaceAware(true); // never forget this!
+		domFactory.setNamespaceAware(true);
 		DocumentBuilder builder;
 		Document doc = null;
 		try {
@@ -59,75 +59,6 @@ public class XPathDemo {
 			nodes = (NodeList) result;
 			for (int i = 0; i < nodes.getLength(); i++) {
 				System.out.println(nodes.item(i).getNodeName());
-			}
-
-			System.out.println("Select first node which sex is not M");
-			expr = xpath.compile("/Kunden/Kunde[@geschlecht!='M'][1]");
-			result = expr.evaluate(doc, XPathConstants.NODESET);
-			nodes = (NodeList) result;
-			for (int i = 0; i < nodes.getLength(); i++) {
-				System.out.println(nodes.item(i).getNodeName());
-			}
-
-			System.out.println("Select all customers which are born in 1972");
-			expr = xpath.compile("//Kunde[@geburtsjahr=1972]");
-			result = expr.evaluate(doc, XPathConstants.NODESET);
-			nodes = (NodeList) result;
-			for (int i = 0; i < nodes.getLength(); i++) {
-				System.out.println(nodes.item(i).getNodeName());
-			}
-
-			System.out.println("Selects all customers");
-			expr = xpath.compile("//Kunde[@geburtsjahr=1972]");
-			result = expr.evaluate(doc, XPathConstants.NODESET);
-			nodes = (NodeList) result;
-			for (int i = 0; i < nodes.getLength(); i++) {
-				System.out.println(nodes.item(i).getNodeName());
-			}
-
-			System.out
-					.println("Select all customers which Nachname is Schmidt");
-			expr = xpath.compile("/Kunden/Kunde[@nachname='Schmidt']/@vorname");
-			result = expr.evaluate(doc, XPathConstants.NODESET);
-			nodes = (NodeList) result;
-			for (int i = 0; i < nodes.getLength(); i++) {
-				System.out.println(nodes.item(i).getNodeName() + " "
-						+ nodes.item(i).getNodeValue());
-			}
-
-			System.out
-					.println("Select all cusomters which only Hobby is Konzert");
-			expr = xpath.compile("/Kunden/Kunde/Hobbies[.='Konzert']");
-			result = expr.evaluate(doc, XPathConstants.NODESET);
-			nodes = (NodeList) result;
-			for (int i = 0; i < nodes.getLength(); i++) {
-				System.out.println(nodes.item(i).getNodeName() + " "
-						+ nodes.item(i).getNodeValue());
-			}
-
-			System.out
-					.println("Select Wohnort of all customers which are born befoer 1970");
-			// expr = xpath
-			// .compile("/Kunden/Kunde/Anschrift/Ort[../../@geburtsjahr < 1970]");
-			// Alternative (mouch simpler solution is)
-			expr = xpath
-					.compile("/Kunden/Kunde[@geburtsjahr < 1970]/Anschrift/Ort");
-			result = expr.evaluate(doc, XPathConstants.NODESET);
-			nodes = (NodeList) result;
-			for (int i = 0; i < nodes.getLength(); i++) {
-				System.out.println(nodes.item(i).getNodeName() + " "
-						+ nodes.item(i).getTextContent());
-			}
-
-			System.out
-					.println("Select Kundennummer of all customers which are playing Golf");
-			expr = xpath
-					.compile("/Kunden/Kunde/KundenNr[../Hobbies[contains(., 'Golf')]]");
-			result = expr.evaluate(doc, XPathConstants.NODESET);
-			nodes = (NodeList) result;
-			for (int i = 0; i < nodes.getLength(); i++) {
-				System.out.println(nodes.item(i).getNodeName() + " "
-						+ nodes.item(i).getTextContent());
 			}
 
 		} catch (XPathExpressionException e) {
