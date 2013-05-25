@@ -1,0 +1,30 @@
+<!-- entity definitions -->
+<!ENTITY ouml "ö">
+
+<!-- root element -->
+<!ELEMENT employee (name, number, projects, comment*)>
+
+<!-- element name, attribute name, data type, default value --> 
+<!ATTLIST employee
+	id CDATA #IMPLIED
+>
+
+<!ATTLIST employee
+	id2 CDATA #REQUIRED
+>
+
+<!ATTLIST employee
+	id3 CDATA #FIXED "test"
+>
+
+<!-- PCData = Parsed Character Data -->
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT number (#PCDATA)>
+
+<!ELEMENT projects (project)*>
+<!ELEMENT project (#PCDATA)>
+
+<!ELEMENT comment (#PCDATA | bold)*>
+<!ELEMENT bold (#PCDATA)>
+
+
