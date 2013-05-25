@@ -11,10 +11,12 @@
 			<project>B</project>
 		</projects>
 		<comment>
-			Bla bla <bold>wichtiges Bla Bla</bold>
+			Bla bla
+			<bold>wichtiges Bla Bla</bold>
 		</comment>
 	</employee>
-	<employee id="24"  id2="world" id3="test">
+
+	<employee id="24" id2="world" id3="test">
 		<name>B&ouml;b
 		</name>
 		<number>423</number>
