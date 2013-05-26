@@ -6,6 +6,7 @@
 
 	<!-- ############ TYPES ################################# -->
 
+	<!-- simple formulation of a complex type -->
 	<complexType name="ct_data_unordered">
 		<sequence>
 			<choice maxOccurs="unbounded">
@@ -15,20 +16,22 @@
 		</sequence>
 	</complexType>
 
-	<!-- Without the shortcut above -->
+	<!-- full formulation of a complex type -->
 	<complexType name="ct_data">
 		<complexContent>
 			<restriction base="anyType">
+
 				<sequence>
 					<element ref="tns:number" maxOccurs="unbounded" />
 					<element ref="tns:info" maxOccurs="unbounded" />
 				</sequence>
+
 			</restriction>
 		</complexContent>
 	</complexType>
 
 	<!-- ############ ELEMENTS ############################## -->
-	<!-- alternative type: ct_employees_shortcut -->
+	<element name="datao" type="tns:ct_data" />
 	<element name="data" type="tns:ct_data_unordered" />
 
 	<!-- Number element -->
