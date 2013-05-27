@@ -14,7 +14,7 @@ import org.xml.sax.helpers.DefaultHandler;
 
 public class SaxDemo {
 
-	// Event Handler
+	// Callback handler
 	class MyHandler extends DefaultHandler {
 
 		@Override
@@ -48,20 +48,18 @@ public class SaxDemo {
 
 	public SaxDemo() {
 		// XML File
-		String xmlFile = "<root> " +
-				"<a/>" +
-				"<a>blabla test123</a>" +
-				"</root>";
+		String xmlFile = "<root> " + "<a/>" + "<a>blabla test123</a>"
+				+ "</root>";
 
-		// InputSource
+		// Create a new input source 
 		StringReader reader = new StringReader(xmlFile);
 		InputSource source = new InputSource(reader);
 
 		try {
 			// SAX Parser
 			SAXParser parser = SAXParserFactory.newInstance().newSAXParser();
-			
-			// Parse XML File -> Event Handler
+
+			// Parse XML File with an ew event handler
 			parser.parse(source, new MyHandler());
 		} catch (ParserConfigurationException e) {
 			e.printStackTrace();

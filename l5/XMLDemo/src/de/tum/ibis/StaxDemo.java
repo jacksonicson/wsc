@@ -14,57 +14,58 @@ public class StaxDemo {
 	public StaxDemo() throws XMLStreamException {
 		// XML File
 		String xmlFile = "<root>" + "<a/>" + "<a>BlaBla</a>" + "</root>";
-
 		// Reader
 		StringReader reader = new StringReader(xmlFile);
 
 		// XmlStreamReader
-		XMLInputFactory factory = XMLInputFactory.newInstance();
-		XMLStreamReader parser = factory.createXMLStreamReader(reader);
+		XMLInputFactory inputFactory = XMLInputFactory.newInstance();
+		XMLStreamReader xmlReader = inputFactory.createXMLStreamReader(reader);
+
+		// ***********************************************
 
 		// Parser (Loop)
-		while (parser.hasNext()) {
-			switch (parser.getEventType()) {
+		while (xmlReader.hasNext()) {
+			switch (xmlReader.getEventType()) {
 			case XMLStreamConstants.START_DOCUMENT:
 				System.out.println("Start Document");
 				break;
 			case XMLStreamConstants.START_ELEMENT:
-				System.out.println("Start Element: " + parser.getName());
+				System.out.println("Start Element: " + xmlReader.getName());
 				break;
 			case XMLStreamConstants.CDATA:
-				System.out.println("CData: " + parser.getElementText());
+				System.out.println("CData: " + xmlReader.getElementText());
 				break;
 			}
 
 			// Next Event
-			parser.next();
+			xmlReader.next();
 		}
 
-		
 		// ***********************************************
-		
+
 		// Create XMLStreamWriter
-		XMLOutputFactory facOut = XMLOutputFactory.newInstance();
-		XMLStreamWriter writer = facOut.createXMLStreamWriter(System.out);
+		XMLOutputFactory outputFactory = XMLOutputFactory.newInstance();
+		XMLStreamWriter xmlWriter = outputFactory
+				.createXMLStreamWriter(System.out);
 
 		// Document
-		writer.writeStartDocument();
-		
-		// Start Element
-		writer.writeStartElement("root");
+		xmlWriter.writeStartDocument();
 
 		// Start Element
-		writer.writeStartElement("a");
-		writer.writeAttribute("id", "sdf");
-		writer.writeEndElement();
+		xmlWriter.writeStartElement("root");
+
+		// Start Element
+		xmlWriter.writeStartElement("a");
+		xmlWriter.writeAttribute("id", "sdf");
+		xmlWriter.writeEndElement();
 
 		// Close Element
-		writer.writeEndElement();
-		writer.writeEndDocument();
+		xmlWriter.writeEndElement();
+		xmlWriter.writeEndDocument();
 
 		// Flush and Close
-		writer.flush();
-		writer.close();
+		xmlWriter.flush();
+		xmlWriter.close();
 
 	}
 
