@@ -94,7 +94,7 @@ public class ValidatingDom {
 				doc.getChildNodes().item(0).appendChild(element);
 			}
 
-			// Validate DOM
+			// Validate DOM again - this will fail as modifications are invalid
 			// try {
 			// validator.validate(new DOMSource(doc));
 			// } catch (Exception e) {
