@@ -3,38 +3,36 @@
 <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.ibis.in.tum.de/test"
 	xmlns:tns="http://www.ibis.in.tum.de/test" elementFormDefault="qualified">
 
-	<complexType name="ct_employees_shortcut">
-		<sequence>
-			<element ref="tns:number" minOccurs="1" maxOccurs="unbounded" />
-			<element ref="tns:info" minOccurs="1" maxOccurs="unbounded" />
-		</sequence>
-	</complexType>
 
-	<complexType name="unordered">
+	<!-- ############ TYPES ################################# -->
+
+	<!-- simple formulation of a complex type -->
+	<complexType name="ct_data_unordered">
 		<sequence>
 			<choice maxOccurs="unbounded">
 				<element ref="tns:number" />
 				<element ref="tns:info" />
 			</choice>
-			<element name="ct1" type="tns:ct1" />
-			<element name="ct2" type="tns:ct2" />
 		</sequence>
 	</complexType>
 
-	<!-- Without the shortcut above -->
-	<complexType name="ct_employees">
+	<!-- full formulation of a complex type -->
+	<complexType name="ct_data">
 		<complexContent>
 			<restriction base="anyType">
+
 				<sequence>
 					<element ref="tns:number" maxOccurs="unbounded" />
 					<element ref="tns:info" maxOccurs="unbounded" />
 				</sequence>
+
 			</restriction>
 		</complexContent>
 	</complexType>
 
-	<!-- alternative type: ct_employees_shortcut -->
-	<element name="employees" type="tns:unordered" />
+	<!-- ############ ELEMENTS ############################## -->
+	<element name="datao" type="tns:ct_data" />
+	<element name="data" type="tns:ct_data_unordered" />
 
 	<!-- Number element -->
 	<element name="number">
@@ -65,7 +63,7 @@
 		</complexType>
 	</element>
 
-	<!-- ### Other tests ### -->
+	<!-- ############ TESTS ################################# -->
 	<simpleType name="st1">
 		<union memberTypes="int date" />
 	</simpleType>

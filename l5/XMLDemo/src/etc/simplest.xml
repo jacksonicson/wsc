@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<employees xmlns="http://www.ibis.in.tum.de/test"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.ibis.in.tum.de/test simplest.xsd">
+
+Hello World
+<!-- 
+Adding the following code would make the document invalid
+ -->
+<!--
+<text>HelloWorld</text> 
+ -->
+
+</employees>
