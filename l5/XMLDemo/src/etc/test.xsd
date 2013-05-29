@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.ibis.in.tum.de/test"
-	xmlns:tns="http://www.ibis.in.tum.de/test" elementFormDefault="qualified">
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.ibis.in.tum.de/test" xmlns:tns="http://www.ibis.in.tum.de/test"
+	elementFormDefault="qualified">
 
 
 	<!-- ############ TYPES ################################# -->

@@ -5,7 +5,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.ibis.in.tum.de/test test.xsd">
 
-	<number>155</number>
+	<number>100</number>
 
 	<info update="2002-09-24">
 		Text with mixed elements
