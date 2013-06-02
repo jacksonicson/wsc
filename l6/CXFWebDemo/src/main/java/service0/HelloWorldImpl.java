@@ -14,9 +14,11 @@ public class HelloWorldImpl implements HelloWorld {
 
 	public User getDemoUser() {
 		User user = new User();
+		user.setId(0);
 		user.setSurename("Hello");
 		user.setLastname("World");
 		user.setAge(10000);
+		user.addHobby("none");
 		return user;
 	}
 
