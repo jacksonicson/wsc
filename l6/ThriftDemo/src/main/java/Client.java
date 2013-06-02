@@ -1,5 +1,3 @@
-package test;
-
 import java.io.UnsupportedEncodingException;
 
 import org.apache.thrift.TException;
@@ -23,7 +21,7 @@ public class Client {
 
 		// Create new protocol
 		TProtocol protocol = new TBinaryProtocol(transport);
-		protocol = new TJSONProtocol(transport); 
+		protocol = new TJSONProtocol(transport);
 
 		// New client which is attached to the protocol
 		Guestbook.Client client = new Guestbook.Client(protocol);
@@ -32,20 +30,21 @@ public class Client {
 		entry.setUid(100);
 		entry.setName("a test entry");
 		client.store(entry);
-		
-		serializerTest(entry); 
+
+		serializerTest(entry);
 	}
 
-	private void serializerTest(Entry entry) throws TException, UnsupportedEncodingException {
+	private void serializerTest(Entry entry) throws TException,
+			UnsupportedEncodingException {
 		TMemoryBuffer transport = new TMemoryBuffer(1000);
 		TProtocol protocol = new TBinaryProtocol(transport);
-//		TProtocol protocol = new TJSONProtocol(transport);
+		// TProtocol protocol = new TJSONProtocol(transport);
 		entry.write(protocol);
 		System.out.println(transport.toString("utf8"));
-		
+
 		Entry newEntry = new Entry();
-		newEntry.read(protocol); 
-		System.out.println("Deserialized name: " + newEntry.getName()); 
+		newEntry.read(protocol);
+		System.out.println("Deserialized name: " + newEntry.getName());
 	}
 
 	public static void main(String arg[]) {

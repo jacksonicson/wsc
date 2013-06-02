@@ -1,11 +1,8 @@
-package test;
-
 import org.apache.thrift.protocol.TBinaryProtocol;
 import org.apache.thrift.protocol.TJSONProtocol;
 import org.apache.thrift.protocol.TProtocolFactory;
 import org.apache.thrift.server.TServer;
 import org.apache.thrift.server.TServer.Args;
-import org.apache.thrift.server.TServlet;
 import org.apache.thrift.server.TSimpleServer;
 import org.apache.thrift.transport.TServerSocket;
 import org.apache.thrift.transport.TServerTransport;
@@ -26,12 +23,12 @@ public class Server {
 
 		// Protocol
 		TProtocolFactory factory = new TBinaryProtocol.Factory();
-		factory = new TJSONProtocol.Factory(); 
-		
+		factory = new TJSONProtocol.Factory();
+
 		// Start server with transport and processor
 		Args args = new Args(serverTransport);
 		args.processor(processor);
-		args.protocolFactory(factory); 
+		args.protocolFactory(factory);
 		TServer server = new TSimpleServer(args);
 
 		System.out.println("Start server...");

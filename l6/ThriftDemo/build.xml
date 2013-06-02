@@ -3,10 +3,10 @@
 	<target name="thrift">
 		<exec executable="./thrift-0.9.0">
 			<arg value="-out" />
-			<arg value="generated" />
+			<arg value="src/main/generated" />
 			<arg value="--gen" />
 			<arg value="java" />
-			<arg value="etc/guestbook.thrift" />
+			<arg value="src/main/resources/guestbook.thrift" />
 		</exec>
 	</target>
 

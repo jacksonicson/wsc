@@ -1,4 +1,3 @@
-package test;
 
 import org.apache.thrift.TException;
 
