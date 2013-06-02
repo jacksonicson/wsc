@@ -9,7 +9,15 @@ public class HelloWorldImpl implements HelloWorld {
 
 	public String sayHello(String text) {
 		System.out.println("Client says: " + text);
-		return "Hello World"; 
+		return "Hello World";
+	}
+
+	public User getDemoUser() {
+		User user = new User();
+		user.setSurename("Hello");
+		user.setLastname("World");
+		user.setAge(10000);
+		return user;
 	}
 
 	public void setTest(Test test) {

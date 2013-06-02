@@ -5,4 +5,6 @@ import javax.jws.WebService;
 @WebService
 public interface HelloWorld {
 	String sayHello(String text);
+
+	User getDemoUser();
 }
