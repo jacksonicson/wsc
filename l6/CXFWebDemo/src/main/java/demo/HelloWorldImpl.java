@@ -2,7 +2,7 @@ package demo;
 
 import javax.jws.WebService;
 
-@WebService(endpointInterface = "demo.HelloWorld", serviceName = "HelloWorld")
+@WebService(endpointInterface = "demo.HelloWorld")
 public class HelloWorldImpl implements HelloWorld {
 
 	public String sayHello(String text) {
