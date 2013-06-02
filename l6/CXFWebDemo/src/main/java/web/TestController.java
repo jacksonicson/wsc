@@ -6,7 +6,9 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
 
-import demo.Test;
+import beans.Test;
+
+
 
 public class TestController implements Controller {
 

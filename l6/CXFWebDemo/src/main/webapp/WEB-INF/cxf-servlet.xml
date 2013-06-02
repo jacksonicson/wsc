@@ -6,14 +6,19 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
 http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 
 	<import resource="classpath:META-INF/cxf/cxf.xml" />
-	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
 
-	<bean name="hwbean" class="demo2.HelloWorldImpl">
+	<bean name="service0" class="service0.HelloWorldImpl">
 		<property name="test" ref="test" />
 	</bean>
 
-	<jaxws:endpoint id="helloWorld" implementor="#hwbean"
-		address="/HelloWorld">
+	<bean name="service1" class="service1.HelloWorldImpl">
+		<property name="test" ref="test" />
+	</bean>
+
+	<jaxws:endpoint implementor="#service0" address="/service0">
+	</jaxws:endpoint>
+
+	<jaxws:endpoint implementor="#service1" address="/service1">
 	</jaxws:endpoint>
 
 </beans>

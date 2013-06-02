@@ -5,7 +5,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
-	<bean name="test" class="demo.Test">
+	<bean name="test" class="beans.Test">
 	</bean>
 
 </beans>

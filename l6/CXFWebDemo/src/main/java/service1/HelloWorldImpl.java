@@ -1,7 +1,7 @@
-package demo2;
+package service1;
 
+import beans.Test;
 import de.tum.in.dss.world.IHelloWorldImpl;
-import demo.Test;
 
 public class HelloWorldImpl extends IHelloWorldImpl {
 
