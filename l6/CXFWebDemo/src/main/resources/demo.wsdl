@@ -38,6 +38,17 @@
 		<soap:binding style="document"
 			transport="http://schemas.xmlsoap.org/soap/http" />
 
+		<!-- Document: Body contains multiple parts. No SOAP rules on what's in 
+			the parts. -->
+		<!-- RPC: Body has one element with the method name. One sub-element for 
+			each parameter. -->
+		<!-- SOAP Encoding: Serialization format specified in SOAP 1.1 section 
+			5 -->
+		<!-- Literal: Serialization uses the W3C XML Schema -->
+
+
+		<!-- RPC+encoded = not supported by CXF -->
+
 		<wsdl:operation name="sayHello">
 			<wsdl:input>
 				<soap:body use="literal" />
