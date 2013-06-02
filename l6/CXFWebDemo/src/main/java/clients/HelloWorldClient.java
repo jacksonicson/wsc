@@ -9,14 +9,14 @@ public class HelloWorldClient {
 		// Create a new proxy factory
 		JaxWsProxyFactoryBean factory = new JaxWsProxyFactoryBean();
 		factory.setServiceClass(HelloWorld.class);
-		factory.setAddress("http://localhost:8080/wsc-0.0.1-SNAPSHOT/services/service0");
+		factory.setAddress("http://localhost:80/wsc-0.0.1-SNAPSHOT/services/service0");
 
 		// Createa a new proxy object
 		HelloWorld client = (HelloWorld) factory.create();
 
 		// Work with the proxy object
 		String output = client.sayHello("hello world");
-		System.out.println(output); 
+		System.out.println(output);
 	}
 
 }

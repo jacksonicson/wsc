@@ -42,6 +42,7 @@
 			the parts. -->
 		<!-- RPC: Body has one element with the method name. One sub-element for 
 			each parameter. -->
+			
 		<!-- SOAP Encoding: Serialization format specified in SOAP 1.1 section 
 			5 -->
 		<!-- Literal: Serialization uses the W3C XML Schema -->
@@ -61,7 +62,7 @@
 
 	<wsdl:service name="serviceWorld">
 		<wsdl:port name="heloWorldPort" binding="tns:helloWorldBinding">
-			<soap:address location="http://192.168.178.3:8080/wsc/services/world" />
+			<soap:address location="http://localhost:8080/wsc/services/world" />
 		</wsdl:port>
 	</wsdl:service>
 

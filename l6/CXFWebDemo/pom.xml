@@ -85,6 +85,11 @@
 						<containerId>jetty7x</containerId>
 						<type>embedded</type>
 					</container>
+					<configuration>
+						<properties>
+							<cargo.servlet.port>80</cargo.servlet.port>
+						</properties>
+					</configuration>
 				</configuration>
 			</plugin>
 
