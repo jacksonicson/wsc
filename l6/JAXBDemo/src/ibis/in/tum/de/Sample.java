@@ -24,19 +24,21 @@ public class Sample {
 		hobbies.add("tennis");
 		hobbies.add("reading");
 		user.setHobbies(hobbies);
-		
+
 		ArrayList<Integer> values = new ArrayList<Integer>();
-		for(int i=0; i<42; i++)
-			values.add(i); 
-		user.setList(values); 
+		for (int i = 0; i < 42; i++)
+			values.add(i);
+		user.setList(values);
 
 		// JAXB
 		JAXBContext jc = JAXBContext.newInstance(User.class);
-		
+
 		// Marshaller and Unmarshaller
 		Unmarshaller u = jc.createUnmarshaller();
 		Marshaller m = jc.createMarshaller();
-		
+
+		// //////////////////////////////////////////////////
+		// //////////////////////////////////////////////////
 		// Marshal (Serialize)
 		StringWriter writer = new StringWriter();
 		m.marshal(user, writer);
