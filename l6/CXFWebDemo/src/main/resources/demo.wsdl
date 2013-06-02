@@ -61,7 +61,7 @@
 
 	<wsdl:service name="serviceWorld">
 		<wsdl:port name="heloWorldPort" binding="tns:helloWorldBinding">
-			<soap:address location="http://localhost:8080/wsc/services/world" />
+			<soap:address location="http://192.168.178.3:8080/wsc/services/world" />
 		</wsdl:port>
 	</wsdl:service>
 
