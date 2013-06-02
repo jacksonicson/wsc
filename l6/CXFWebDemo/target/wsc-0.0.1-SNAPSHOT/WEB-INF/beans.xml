@@ -17,4 +17,7 @@
 	<jaxws:endpoint id="helloWorld" implementor="demo.HelloWorldImpl"
 		address="/world" />
 
+	<jaxws:endpoint id="helloWorld2" implementor="demo2.HelloWorldImpl"
+		address="/world2" />
+
 </beans>
