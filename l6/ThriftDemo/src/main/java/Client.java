@@ -26,24 +26,38 @@ public class Client {
 		// New client which is attached to the protocol
 		Guestbook.Client client = new Guestbook.Client(protocol);
 
+		// Store entry using the client 
 		Entry entry = new Entry();
 		entry.setUid(100);
 		entry.setName("a test entry");
 		client.store(entry);
 
+		// Serialization demo
 		serializerTest(entry);
 	}
 
 	private void serializerTest(Entry entry) throws TException,
 			UnsupportedEncodingException {
+		// Output buffer for the protocol
 		TMemoryBuffer transport = new TMemoryBuffer(1000);
+		
+		// Binary or JSON protocol writes into buffer 
 		TProtocol protocol = new TBinaryProtocol(transport);
 		// TProtocol protocol = new TJSONProtocol(transport);
+		
+		// write entry using protocol
 		entry.write(protocol);
+		
+		// Flush buffer to stream
 		System.out.println(transport.toString("utf8"));
 
+		// New empty entry
 		Entry newEntry = new Entry();
+		
+		// Read entry from input buffer using protocol
 		newEntry.read(protocol);
+		
+		// Flush buffer to stream
 		System.out.println("Deserialized name: " + newEntry.getName());
 	}
 
