@@ -1,0 +1,21 @@
+<?xml-stylesheet type="text/xsl" ?>
+<!DOCTYPE beans SYSTEM "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	<bean id="dictionary" class="de.tum.dss.beans.Dictionary">
+	</bean>
+
+	<bean id="textSearch" class="de.tum.dss.beans.TextSearch">
+	</bean>
+	
+	<bean id="textSearch22" class="de.tum.dss.beans.TextSearch">
+	</bean>
+
+	<bean id="textSearch2" class="de.tum.dss.beans.TextSearch2">
+	</bean>
+
+	<bean id="blog" class="de.tum.dss.Blog">
+		<property name="dictionary" ref="dictionary" />
+		<property name="textSearch" ref="textSearch" />
+	</bean>
+</beans>
