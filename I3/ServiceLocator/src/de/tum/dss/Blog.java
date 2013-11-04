@@ -21,7 +21,7 @@ public class Blog {
 		dictionary = (IDictionary) ServiceLocator.getServiceLocator().lookup(
 				"dictionary");
 		textSearch = (ITextSearch) ServiceLocator.getServiceLocator().lookup(
-				"textSearch2");
+				"textSearch");
 		
 		// Configure beans
 		dictionary.setLanguage("de");
