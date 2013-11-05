@@ -1,6 +1,6 @@
 package de.ibis.tum;
 
-public class ReverseCommand {
+public class NameCommand {
 
 	private String input;
 

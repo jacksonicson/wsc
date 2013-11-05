@@ -7,19 +7,20 @@ import org.springframework.validation.BindException;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.SimpleFormController;
 
-public class ReverseController extends SimpleFormController {
+public class NameController extends SimpleFormController {
 
 	@Override
-	protected ModelAndView onSubmit(Object command, BindException errors) throws Exception {
+	protected ModelAndView onSubmit(Object command, BindException errors)
+			throws Exception {
 
 		Map<String, Object> model = new HashMap<String, Object>();
 
-		ReverseCommand cmd = (ReverseCommand) command;
+		NameCommand cmd = (NameCommand) command;
 
-		String reverse = new StringBuffer(cmd.getInput()).reverse().toString();
+		String result = cmd.getInput().toUpperCase();
 
 		model.put("input", cmd.getInput());
-		model.put("result", reverse);
+		model.put("result", result);
 
 		return new ModelAndView("result", model);
 	}

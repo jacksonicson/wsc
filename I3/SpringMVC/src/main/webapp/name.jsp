@@ -18,12 +18,12 @@
 </head>
 <body>
 
-<h1>Spring MVC Reverse String</h1>
+<h1>Spring MVC Name Input</h1>
 
 <table>
 	<form:form>
 		<tr>
-			<td>String:</td>
+			<td>Your name:</td>
 			<td><form:input path="input" /><form:errors path="input"
 				cssClass="errors" /></td>
 		</tr>

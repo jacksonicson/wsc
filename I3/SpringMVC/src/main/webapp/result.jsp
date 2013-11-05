@@ -20,8 +20,8 @@
 
 <h1>Result</h1>
 
-<p>Input: ${input}</p>
-<p>Result: ${result}</p>
+<p>Given name: ${input}</p>
+<p>Upper case name: ${result}</p>
 
 
 </body>

@@ -36,14 +36,14 @@
 		<property name="model" ref="testModel" />
 	</bean>
 
-	<bean name="/reverse.app" class="de.ibis.tum.ReverseController">
-		<property name="commandClass" value="de.ibis.tum.ReverseCommand" />
+	<bean name="/name.app" class="de.ibis.tum.NameController">
+		<property name="commandClass" value="de.ibis.tum.NameCommand" />
 
 		<property name="successView" value="result" />
-		<property name="formView" value="reverse" />
+		<property name="formView" value="name" />
 
 		<property name="validator">
-			<bean class="de.ibis.tum.ReverseValidator" />
+			<bean class="de.ibis.tum.NameValidator" />
 		</property>
 	</bean>
 
