@@ -9,6 +9,7 @@ public class ServiceLocator {
 
 	private static ServiceLocator singleton;
 
+	// Mapping of service names to service objects
 	private Map<String, Object> services = new HashMap<String, Object>();
 
 	public static ServiceLocator getServiceLocator() {

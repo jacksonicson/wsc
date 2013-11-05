@@ -1,4 +1,4 @@
-package de.tum.dss;
+package de.tum.dss.services;
 
 public class Dictionary {
 

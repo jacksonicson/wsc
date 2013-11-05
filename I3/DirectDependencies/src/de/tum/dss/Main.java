@@ -4,7 +4,10 @@ public class Main {
 
 	public Main()
 	{
-		Blog blog = new Blog(); 
+		// Create a new instance of blog
+		Blog blog = new Blog();
+		
+		// Find posts in this blog
 		blog.findPostsWith("test"); 
 	}
 	

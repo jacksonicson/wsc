@@ -11,14 +11,14 @@ public class Main {
 		// Get an instance of the service locator
 		ServiceLocator locator = ServiceLocator.getServiceLocator();
 		try {
-			// Register a couple of beans
+			// Register beans
 			locator.registerService("dictionary", new Dictionary());
 			locator.registerService("textSearch", new TextSearch2());
 		} catch (InvalidServiceRegistrationException e) {
 			e.printStackTrace();
 		}
 
-		// Create a new blog bean
+		// Create a new instance of blog
 		Blog blog = new Blog();
 		blog.findPostsWith("test");
 	}
