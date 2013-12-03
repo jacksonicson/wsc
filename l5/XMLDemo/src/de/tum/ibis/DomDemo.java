@@ -42,13 +42,13 @@ public class DomDemo {
 			Document doc = builder.parse(source);
 
 			// Iterate over all nodes
-			// First level
+			// Level 1
 			NodeList list = doc.getChildNodes();
 			for (int i = 0; i < list.getLength(); i++) {
 				Node node = list.item(i);
 				System.out.println("Node: " + node.getNodeName());
 
-				// Next level
+				// Level 2
 				for (int j = 0; j < node.getChildNodes().getLength(); j++) {
 					Node childNode = node.getChildNodes().item(i);
 					System.out
