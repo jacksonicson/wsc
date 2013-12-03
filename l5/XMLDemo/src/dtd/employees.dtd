@@ -2,23 +2,29 @@
 <!ENTITY ouml "ö">
 
 <!-- root element -->
+<!-- contains name, number, projects, and maybe comments -->
 <!ELEMENT employee (name, number, projects, comment*)>
 
-<!-- element name, attribute name, data type, default value --> 
+<!-- attribute list for the employee element --> 
+<!-- #IMPLIED - id is optional -->
 <!ATTLIST employee
 	id CDATA #IMPLIED
 >
 
+<!-- #REQUIRD -- id2 is required -->
 <!ATTLIST employee
 	id2 CDATA #REQUIRED
 >
 
+<!-- #FIXED -- id3 is fixed to a value and cannot be changed -->
 <!ATTLIST employee
 	id3 CDATA #FIXED "test"
 >
 
-<!-- PCData = Parsed Character Data -->
+<!-- PCData = Parsed Character Data (itself contains XML code) -->
 <!ELEMENT name (#PCDATA)>
+
+<!-- Other elements -->
 <!ELEMENT number (#PCDATA)>
 
 <!ELEMENT projects (project)*>

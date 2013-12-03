@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 
-<data xmlns="http://www.ibis.in.tum.de/test" xmlns:tns="http://www.ibis.in.tum.de/test"
+<datao xmlns="http://www.ibis.in.tum.de/test" xmlns:tns="http://www.ibis.in.tum.de/test"
 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.ibis.in.tum.de/test test.xsd">
@@ -13,6 +13,6 @@
 		text ....
 	</info>
 
-	<number>155</number>
+	<!--  <number>155</number>  -->
 
-</data>
+</datao> 

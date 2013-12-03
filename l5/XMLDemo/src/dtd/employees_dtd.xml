@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 
-<!-- Referencing the DTD file -->
+<!-- Referencing a private external DTD file -->
 <!DOCTYPE corporation SYSTEM "employees.dtd" >
+
+<!-- Reference a public external DTD file -->
+<!--  
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+ -->
 
 <corporation>
 	<employee id="2" id2="asdf">

@@ -16,6 +16,6 @@
 
 	<bean id="blog" class="de.tum.dss.Blog">
 		<property name="dictionary" ref="dictionary" />
-		<property name="textSearch" ref="textSearch" />
+		<property name="textSearch" ref="textSearch2" />
 	</bean>
 </beans>

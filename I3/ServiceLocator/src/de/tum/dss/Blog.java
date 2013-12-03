@@ -19,7 +19,7 @@ public class Blog {
 
 		// Use the service locator to resolve dependencies
 		dictionary = (IDictionary) ServiceLocator.getServiceLocator().lookup(
-				"dictionary");
+				"ljlklkj");
 		textSearch = (ITextSearch) ServiceLocator.getServiceLocator().lookup(
 				"textSearch");
 		

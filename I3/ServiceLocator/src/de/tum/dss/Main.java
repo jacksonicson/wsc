@@ -1,7 +1,7 @@
 package de.tum.dss;
 
 import de.tum.dss.beans.Dictionary;
-import de.tum.dss.beans.TextSearch2;
+import de.tum.dss.beans.TextSearch;
 import de.tum.dss.exceptions.InvalidServiceRegistrationException;
 import de.tum.dss.locator.ServiceLocator;
 
@@ -13,7 +13,7 @@ public class Main {
 		try {
 			// Register beans
 			locator.registerService("dictionary", new Dictionary());
-			locator.registerService("textSearch", new TextSearch2());
+			locator.registerService("textSearch", new TextSearch());
 		} catch (InvalidServiceRegistrationException e) {
 			e.printStackTrace();
 		}
