@@ -35,6 +35,8 @@
 	<!-- ############################################ -->
 
 	<wsdl:binding name="helloWorldBinding" type="tns:IHelloWorld">
+	
+		<!-- Set binding style to document -->
 		<soap:binding style="document"
 			transport="http://schemas.xmlsoap.org/soap/http" />
 

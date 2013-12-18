@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basename">
+			<value>messages</value>
+		</property>
+	</bean>
+
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<bean name="model" class="de.tum.in.dss.Model">
+	</bean>
+
+	<bean name="/test.app" class="de.tum.in.dss.TestController">
+		<property name="model" ref="model" />
+	</bean>
+
+
+	<bean name="/form.app" class="de.tum.in.dss.FormTestController">
+		<property name="commandClass" value="de.tum.in.dss.FormCommand" />
+
+		<property name="successView" value="result" />
+		<property name="formView" value="form" />
+
+		<property name="validator">
+			<bean class="de.tum.in.dss.FormValidator" />
+		</property>
+	</bean>
+
+
+</beans>

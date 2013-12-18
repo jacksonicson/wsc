@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<bean name="/customers.app" class="de.ibis.tum.CustomersController">
+	</bean>
+
+	<bean name="/createCustomer.app" class="de.ibis.tum.CreateCustomerController">
+		<property name="commandClass" value="de.ibis.tum.CreateCustomerForm" />
+
+		<property name="successView" value="customers" />
+		<property name="formView" value="createCustomer" />
+
+		<property name="validator">
+			<bean class="de.ibis.tum.CreateCustomerValidator" />
+		</property>
+	</bean>
+
+	<bean name="/editCustomer.app" class="de.ibis.tum.EditCustomerController">
+		<property name="commandClass" value="de.ibis.tum.EditCustomerForm" />
+
+		<property name="successView" value="customers" />
+		<property name="formView" value="editCustomer" />
+
+		<property name="validator">
+			<bean class="de.ibis.tum.CreateCustomerValidator" />
+		</property>
+	</bean>
+
+	<bean id="handlerMapping"
+		class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping">
+		<property name="interceptors">
+			<list>
+			</list>
+		</property>
+	</bean>
+
+</beans>

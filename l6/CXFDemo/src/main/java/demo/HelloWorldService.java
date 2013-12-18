@@ -13,7 +13,7 @@ public class HelloWorldService {
 		// Address to publish the service
 		String address = "http://localhost:9000/helloWorld";
 		
-		// Publish service and wait for requests
+		// Publish service and wait for requests (starts jetty server)
 		Endpoint.publish(address, implementor);
 	}
 

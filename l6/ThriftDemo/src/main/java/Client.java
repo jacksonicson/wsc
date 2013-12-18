@@ -43,7 +43,7 @@ public class Client {
 		
 		// Binary or JSON protocol writes into buffer 
 		TProtocol protocol = new TBinaryProtocol(transport);
-		// TProtocol protocol = new TJSONProtocol(transport);
+//		 TProtocol protocol = new TJSONProtocol(transport);
 		
 		// write entry using protocol
 		entry.write(protocol);
