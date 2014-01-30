@@ -84,7 +84,15 @@
 		<finalName>${output.filename}</finalName>
 
 		<plugins>
-			<!-- CARGO plugin to start an embedded Jetty for testing -->
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+            <!-- CARGO plugin to start an embedded Jetty for testing -->
 			<plugin>
 				<groupId>org.codehaus.cargo</groupId>
 				<artifactId>cargo-maven2-plugin</artifactId>
@@ -95,6 +103,11 @@
 						<containerId>jetty8x</containerId>
 						<type>embedded</type>
 					</container>
+                    <configuration>
+                        <properties>
+                            <cargo.servlet.port>9090</cargo.servlet.port>
+                        </properties>
+                    </configuration>
 				</configuration>
 			</plugin>
 		</plugins>
