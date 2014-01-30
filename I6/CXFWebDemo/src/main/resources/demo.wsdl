@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<wsdl:definitions targetNamespace="http://dss.in.tum.de/world"
+	xmlns:tns="http://dss.in.tum.de/world" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+
+	<!-- ############################################ -->
+	<!-- Service description -->
+	<!-- ############################################ -->
+
+	<wsdl:types>
+		<!-- Type definitions -->
+	</wsdl:types>
+
+	<!-- Messages used by the operations -->
+	<wsdl:message name="sayHelloInput">
+		<wsdl:part name="value" type="xsd:int" />
+	</wsdl:message>
+
+	<wsdl:message name="voidResponse">
+	</wsdl:message>
+
+	<!-- Port Types (Interfaces) -->
+	<wsdl:portType name="IHelloWorld">
+		<!-- Operations within this port type -->
+		<wsdl:operation name="sayHello">
+			<wsdl:input message="tns:sayHelloInput" />
+			<wsdl:output message="tns:voidResponse" />
+		</wsdl:operation>
+	</wsdl:portType>
+
+
+	<!-- ############################################ -->
+	<!-- Technical Stuff -->
+	<!-- ############################################ -->
+
+	<wsdl:binding name="helloWorldBinding" type="tns:IHelloWorld">
+	
+		<!-- Set binding style to document -->
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+
+		<!-- Document: Body contains multiple parts. No SOAP rules on what's in 
+			the parts. -->
+		<!-- RPC: Body has one element with the method name. One sub-element for 
+			each parameter. -->
+			
+		<!-- SOAP Encoding: Serialization format specified in SOAP 1.1 section 
+			5 -->
+		<!-- Literal: Serialization uses the W3C XML Schema -->
+
+
+		<!-- RPC+encoded = not supported by CXF -->
+
+		<wsdl:operation name="sayHello">
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+
+	<wsdl:service name="serviceWorld">
+		<wsdl:port name="heloWorldPort" binding="tns:helloWorldBinding">
+			<soap:address location="http://localhost:8080/wsc/services/world" />
+		</wsdl:port>
+	</wsdl:service>
+
+
+</wsdl:definitions>

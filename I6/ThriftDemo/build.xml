@@ -1,0 +1,13 @@
+<project name="ThriftDemo" basedir="." default="thrift">
+
+	<target name="thrift">
+		<exec executable="./thrift-0.9.0">
+			<arg value="-out" />
+			<arg value="src/main/generated" />
+			<arg value="--gen" />
+			<arg value="java" />
+			<arg value="src/main/resources/guestbook.thrift" />
+		</exec>
+	</target>
+
+</project>

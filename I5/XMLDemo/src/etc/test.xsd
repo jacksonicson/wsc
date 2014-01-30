@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.ibis.in.tum.de/test" xmlns:tns="http://www.ibis.in.tum.de/test"
+	elementFormDefault="qualified">
+
+	<!-- Root elements -->
+	<element name="datao" type="tns:ct_data" />
+	<element name="datau" type="tns:ct_data_unordered" />
+
+	<!-- Number element -->
+	<element name="number">
+		<simpleType>
+			<restriction base="int">
+				<minInclusive value="100"></minInclusive>
+				<maxInclusive value="999"></maxInclusive>
+			</restriction>
+		</simpleType>
+	</element>
+
+	<!-- Info element -->
+	<element name="info">
+		<complexType mixed="true">
+			<sequence>
+				<element name="p">
+					<complexType>
+						<simpleContent>
+							<extension base="string">
+								<attribute name="date" type="date" />
+							</extension>
+						</simpleContent>
+					</complexType>
+				</element>
+			</sequence>
+
+			<attribute name="update" type="date" />
+		</complexType>
+	</element>
+
+	
+	<!-- simple formulation of a complex type -->
+	<complexType name="ct_data_unordered">
+		<sequence>
+			<choice maxOccurs="unbounded">
+				<element ref="tns:number" />
+				<element ref="tns:info" />
+			</choice>
+		</sequence>
+	</complexType>
+
+	<!-- full formulation of a complex type -->
+	<complexType name="ct_data">
+		<complexContent>
+			<restriction base="anyType">
+				<sequence>
+					<element ref="tns:number" maxOccurs="unbounded" />
+					<element ref="tns:info" maxOccurs="unbounded" />
+				</sequence>
+			</restriction>
+		</complexContent>
+	</complexType>
+	
+	<simpleType name="st1">
+		<union memberTypes="int date" />
+	</simpleType>
+
+	<simpleType name="st2">
+		<list itemType="int" />
+	</simpleType>
+
+	<complexType name="ct1">
+		<simpleContent>
+			<extension base="tns:st1">
+				<attribute name="attr" type="string" />
+			</extension>
+		</simpleContent>
+	</complexType>
+
+	<complexType name="ct2">
+		<simpleContent>
+			<extension base="tns:st2">
+			</extension>
+		</simpleContent>
+	</complexType>
+
+</schema>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!-- Referencing a private external DTD file -->
+<!DOCTYPE corporation SYSTEM "employees.dtd" >
+
+<!-- Reference a public external DTD file -->
+<!--  
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+ -->
+
+<corporation>
+	<employee id="2" id2="asdf">
+		<name>asdlfasf</name>
+		<number>sdfasdfd</number>
+		<asdf></asdf>
+		<projects>
+			<project>B</project>
+		</projects>
+		<comment>
+			Bla bla
+			<bold>wichtiges Bla Bla</bold>
+		</comment>
+	</employee>
+
+	<employee id="24" id2="world" id3="test">
+		<name>B&ouml;b
+		</name>
+		<number>423</number>
+		<projects>
+			<project>A</project>
+			<project>B</project>
+		</projects>
+	</employee>
+</corporation>
