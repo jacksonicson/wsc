@@ -1,0 +1,2 @@
+#!/bin/bash
+telnet dss.in.tum.de 80
