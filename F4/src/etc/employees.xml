@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<corporation xmlns="http://www.ibis.in.tum.de/employees"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.ibis.in.tum.de/employees employees.xsd">
+
+	<user identifier="2">
+		<surname>asdf</surname>
+		<lastname>asdf</lastname>
+		<age>44</age>
+		<birth>1985-02-01</birth>
+
+		<address>
+			<city>Munic</city>
+			<plz>232323</plz>
+			<street>street</street>
+			<housenumber>34</housenumber>
+		</address>
+		
+		<address>
+			<city>Munic</city>
+			<plz>232323</plz>
+			<street>street</street>
+			<housenumber>34</housenumber>
+		</address>
+	</user>
+	
+	<user identifier="2">
+		<surname>asdf</surname>
+		<lastname>asdf</lastname>
+		<age>44</age>
+		<birth>1985-02-01</birth>
+
+		<address>
+			<city>Munic</city>
+			<plz>232323</plz>
+			<street>street</street>
+			<housenumber>34</housenumber>
+		</address>
+		
+		<address>
+			<city>Munic</city>
+			<plz>232323</plz>
+			<street>street</street>
+			<housenumber>34</housenumber>
+		</address>
+	</user>
+
+</corporation>

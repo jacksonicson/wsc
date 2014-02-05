@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.ibis.in.tum.de/employees"
+	xmlns:tns="http://www.ibis.in.tum.de/employees" elementFormDefault="qualified">
+
+	<element name="corporation">
+		<complexType>
+			<sequence>
+				<element ref="tns:user" minOccurs="1" maxOccurs="unbounded" />
+			</sequence>
+		</complexType>
+	</element>
+
+	<element name="user">
+		<complexType>
+			<sequence>
+				<element name="surname" type="string" />
+				<element name="lastname" type="string" />
+				<element name="age" type="tns:age" />
+				<element name="birth" type="date" />
+				<element ref="tns:address" minOccurs="0" maxOccurs="unbounded" />
+			</sequence>
+
+			<attribute name="identifier" type="int" />
+		</complexType>
+	</element>
+
+	<element name="address">
+		<complexType>
+			<sequence>
+				<element name="city" type="string" />
+				<element name="plz" type="string" />
+				<element name="street" type="string" />
+				<element name="housenumber" type="tns:houseNumber" />
+			</sequence>
+		</complexType>
+	</element>
+
+	<simpleType name="houseNumber">
+		<restriction base="string">
+			<maxLength value="3"></maxLength>
+			<minLength value="1"></minLength>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="age">
+		<restriction base="integer">
+			<minInclusive value="0" />
+			<maxInclusive value="150" />
+		</restriction>
+	</simpleType>
+
+</schema>
